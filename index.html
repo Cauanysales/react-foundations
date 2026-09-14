@@ -33,7 +33,7 @@
          <div>
        <Header title="React" />
        {names.map((name) => (
-  <p>{name}</p>
+  <p key={name}>{name}</p>
 ))}
     </div>
   );
