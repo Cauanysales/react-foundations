@@ -24,34 +24,41 @@
       const domNode = document.getElementById('app');
 
       function Header({ title }) {
-  return <h1>{title}</h1>;
+        return <h1>{title}</h1>;
+      }
 
-function List({ items }) {
-  return (
-    <ul>
-      {items.map((item) => (
-        <li key={item}>{item}</li>
-      ))}
-    </ul>
-  );
-}
+      function List({ items }) {
+        return (
+          <ul>
+            {items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        );
+      }
 
-
-}
       function HomePage() {
-       const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
-       const [likes, setLikes] = React.useState(0);
-       return (
-         <div>
-       <Header title="React" />
-       <List items={names} />
-    </div>
-  );
-}
+        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+        const [likes, setLikes] = React.useState(0);
+
+        function handleClick() {
+          console.log("increment like count");
+        }
+
+        return (
+          <div>
+            <Header title="React" />
+            <List items={names} />
+            <button onClick={handleClick}>Like</button>
+          </div>
+        );
+      }
 
       const root = createRoot(domNode);
 
-     root.render(<HomePage />);
-      </script>
+      root.render(<HomePage />);
+    </script>
   </body>
 </html>
+
+  
