@@ -25,6 +25,18 @@
 
       function Header({ title }) {
   return <h1>{title}</h1>;
+
+function List({ items }) {
+  return (
+    <ul>
+      {items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+
+
 }
       function HomePage() {
        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
@@ -32,9 +44,7 @@
        return (
          <div>
        <Header title="React" />
-       {names.map((name) => (
-  <p key={name}>{name}</p>
-))}
+       <List items={names} />
     </div>
   );
 }
