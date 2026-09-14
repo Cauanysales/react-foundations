@@ -40,7 +40,7 @@ function List({ items }) {
 }
       function HomePage() {
        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
-
+       const [likes, setLikes] = React.useState(0);
        return (
          <div>
        <Header title="React" />
